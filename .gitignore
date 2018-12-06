@@ -1,5 +1,8 @@
-#.ipynb_checkpointsフォルダは無視する
+#.ipynb_checkpointsディレクトリは無視する
 **/.ipynb_checkpoints/
 
 #.DS_Store
 **/.DS_Store
+
+#__pycache__ディレクトリは無視する
+**/__pycache__/
