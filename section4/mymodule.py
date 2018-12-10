@@ -1,4 +1,5 @@
 import MeCab
+import collections
 
 def create_morphemes():
     with open("neko.txt.mecab") as parsed_file:
@@ -32,3 +33,15 @@ def create_morphemes():
                 one_sentence_morphemes = []
 
     return morphemes
+
+def create_words(morphemes, mode="sorted"):
+    words = []
+    for morpheme in morphemes:
+        for line in morpheme:
+            words.append(line["surface"])
+    
+    if mode == "sorted":
+        words_count = collections.Counter(words)
+        return words_count.most_common()
+    else:
+        return words
